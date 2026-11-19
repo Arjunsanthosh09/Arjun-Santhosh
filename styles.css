@@ -967,7 +967,63 @@ body.light-mode .theme-toggle .moon-icon {
     opacity: 0;
     transform: rotate(90deg) scale(0);
 }
+.intern-detail {
+    padding: 20px 0 40px;
+    max-width: 900px;
+}
+/* keep every column the same width, whatever the image size */
+.cert-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 
+.cert-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* the preview fills the card, and the whole certificate stays visible */
+.cert-preview {
+    overflow: hidden;
+}
+
+.cert-preview .cert-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #111;
+}
+
+@media (max-width: 1024px) {
+    .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .cert-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.intern-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-transform: none;
+    opacity: 0.8;
+    margin-bottom: 16px;
+}
+.cert-top {
+    gap: 16px;
+}
+
+.cert-year {
+    flex-shrink: 0;
+}
+
+.cert-provider {
+    text-align: right;
+}
+.intern-desc strong {
+    opacity: 1;
+    font-weight: 600;
+}
 /* Refined Double-Border Geometric Structure (Right Concentrated) */
 .hero-bg-shapes {
     position: absolute;
@@ -1093,6 +1149,16 @@ body.loaded .hero-image-wrapper {
     animation: phantomMaterialize 3s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
 }
 
+.forge-desc {
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.75;
+}
 /* Phantom Materialization — Dimensional slit → light leak → ghost flash → settle */
 @keyframes phantomMaterialize {
     0% {
